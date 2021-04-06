@@ -1,5 +1,7 @@
 import random
 
+from phrase_hunter.game import Game
+
 PHRASES = [
     # "May the Force be with you.",
     # "Elementary, my dear Watson.",
@@ -30,20 +32,23 @@ def choose_random_phrase():
 
 
 def main():
-    is_playing = True
-    number_of_attempts = 0
+    game = Game(PHRASES)
+    game.start()
 
-    phrase = choose_random_phrase()
-    selected_letters = []
+    # is_playing = True
+    # number_of_attempts = 0
 
-    while is_playing:
-        placeholder = build_placeholder(phrase, selected_letters)
+    # phrase = choose_random_phrase()
+    # selected_letters = []
 
-        print(placeholder)
+    # while is_playing:
+    #     placeholder = build_placeholder(phrase, selected_letters)
 
-        selected_letter = input("Guess a letter: ")
+    #     print(placeholder)
 
-        selected_letters.append(selected_letter.lower())
+    #     selected_letter = input("Guess a letter: ")
+
+    #     selected_letters.append(selected_letter.lower())
 
 
 if __name__ == "__main__":

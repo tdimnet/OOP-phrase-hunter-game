@@ -3,7 +3,9 @@ class Phrase:
         self.phrase = phrase
     
     def display(self):
-        pass
+        print("====")
+        print(self.phrase)
+        print("====")
 
     def check_letter(self):
         pass
