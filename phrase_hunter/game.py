@@ -13,7 +13,11 @@ class Game:
         self.welcome()
         self.get_random_phrase()
 
-        self.active_phrase.display()
+        while self.missed < 3:
+            self.active_phrase.display(self.guesses)
+
+            self.get_guess()
+            
 
         
 
@@ -21,12 +25,14 @@ class Game:
         self.active_phrase = random.choice(self.phrases)
 
     def welcome(self):
+        print("")
         print("==============================")
         print("   Welcome to Phrase Hunter   ")
         print("==============================")
 
     def get_guess(self):
-        pass
+        letter = input("Guess a letter: ")
+        self.guesses.append(letter)
 
     def game_over(self):
         pass
