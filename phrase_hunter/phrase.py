@@ -18,8 +18,10 @@ class Phrase:
         
         print("\n{}\n".format(placeholder_phrase))
 
-    def check_letter(self, letter):
-        pass
+    def check_letter(self, guessed_letter):
+        parse_to_lower = [letter.lower() for letter in self.phrase]
+        
+        return guessed_letter.lower() in parse_to_lower
 
     def check_complete(self):
         pass
