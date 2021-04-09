@@ -15,17 +15,9 @@ class Game:
         self.welcome()
         self.get_random_phrase()
 
-        while self.missed < self.max_number_of_attempts:
+        while self.game_over():
             self.active_phrase.display(self.guesses)
-
             self.get_guess()
-
-            print("====")
-            print(self.missed)
-            print("====")
-            print("====")
-            print(self.guesses)
-            print("====")
 
     def get_random_phrase(self):
         self.active_phrase = random.choice(self.phrases)
@@ -44,7 +36,15 @@ class Game:
 
             print("\nYou have {} out of {} lives remaining!".format(self.missed, self.max_number_of_attempts))
 
-        self.guesses.append(letter)
+        self.guesses.append(letter.lower())
 
     def game_over(self):
-        pass
+        if not self.missed < self.max_number_of_attempts:
+            print("Bummer, you losse")
+            return False
+
+        if self.active_phrase.check_complete(self.guesses):
+            print("Congrats, you won the game")
+            return False
+
+        return True
