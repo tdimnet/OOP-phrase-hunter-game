@@ -2,6 +2,7 @@ import random
 
 from phrase_hunter.phrase import Phrase
 
+
 class Game:
     max_number_of_attempts = 5
 
@@ -29,7 +30,17 @@ class Game:
         print("==============================")
 
     def get_guess(self):
-        letter = input("Guess a letter: ")
+        is_guessing = True
+
+        letter = ""
+
+        while is_guessing:
+            letter = input("Guess a letter: ")
+
+            if len(letter) > 1 or not letter.isalpha():
+                print("Wrong format")
+            else:
+                is_guessing = False
 
         if not self.active_phrase.check_letter(letter):
             self.missed += 1
