@@ -15,7 +15,7 @@ class Phrase:
                 if letter.lower() in guesses or letter.upper() in guesses:
                     placeholder.append(letter)
                 else:
-                    placeholder.append("_")
+                    placeholder.append("_ ")
             else:
                 placeholder.append(letter)
 

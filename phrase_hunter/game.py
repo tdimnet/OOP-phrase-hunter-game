@@ -45,7 +45,7 @@ class Game:
         if not self.active_phrase.check_letter(letter):
             self.missed += 1
 
-            print("\nYou have {} out of {} lives remaining!".format(self.missed, self.max_number_of_attempts))
+            print("\nYou have {} out of {} tries!".format(self.missed, self.max_number_of_attempts))
 
         self.guesses.append(letter.lower())
 
